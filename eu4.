@@ -1,0 +1,51 @@
+country_decisions = {
+
+my_first_decision = {
+major = yes
+potential = {
+  ai=no
+}
+effect = {
+	add_prestige = 99
+  add_legitimacy = 99
+}
+}
+my_first_decision2 = {
+major = yes
+potential = {
+  ai=0
+}
+effect = {
+	add_stability = 999
+  
+  define_general = {
+    shock = 6
+    fire = 6
+    manuever = 6
+    siege = 6
+}
+}
+}
+my_first_decision3 = {
+major = yes
+potential = {
+  ai=no
+}
+effect = {
+add_corruption = -10
+}
+}
+my_first_decision4 = {
+major = yes
+potential = {
+  ai=no
+}
+effect = {
+	random_neighbor_province = { add_core = ROOT
+  add_claim = ROOT
+  }
+}
+}
+
+
+}
