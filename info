@@ -1,0 +1,28 @@
+struct nod{
+int info;
+nod* ant;
+}*varf;
+
+
+
+void push(nod *&varf,nod *nou)
+{
+if(varf==NULL)
+varf = nou
+else
+{
+nou->ant=varf;
+varf=nou;
+}
+}
+nod* pp(nod *&varf)
+{
+nod* p;
+if(varf=NULL)
+return NULL;
+else
+{ q=varf;
+varf=varf->ant;
+return q;
+}
+}
