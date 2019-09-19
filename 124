@@ -1,0 +1,57 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+int n,sol[100];
+// pasul inapoi se face implicit deoarece implementarea este recursiva(se utilizeaza stiva)
+
+//ion face backtracking
+ifstream f("permutari1.in");
+ofstream g("permutari1.out");
+void afisare()
+{
+    for(int i=1;i<=n;i++)
+        g<<sol[i]<<" ";
+    g<<endl;
+}
+void init(int k)
+{
+    sol[k]=n+1;
+}
+int succesor(int k)
+{
+    if(sol[k]>1) {
+        sol[k]--;
+        return 1;
+    }
+    return 0;
+}
+int valid(int k)
+{
+    for(int i=1;i<k;i++)
+        if(sol[k]==sol[i])
+        return 0;
+    return 1;
+}
+void bkt(int k)
+{
+    if(k==n+1)
+        afisare();
+    else
+    {
+        init(k); //initializez
+        while(succesor(k)) // aleg o valoare pentru comp curenta
+            if(valid(k)) //daca val e potrivita
+            bkt(k+1); //trec la pasu urmator
+        //pasul inapoi se face impl
+    }
+}
+
+
+int main()
+{
+    f>>n;
+    bkt(1);
+    return 0;
+
+}
+//implementarea fct de sus pt prob permutari
