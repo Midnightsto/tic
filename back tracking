@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+int n,sol[100];
+// pasul inapoi se face implicit deoarece implementarea este recursiva(se utilizeaza stiva)
+
+//ion face backtracking
+void afisare()
+{
+    for(int i=1;i<=n;i++)
+        cout<<sol[i]<<" ";
+    cout<<endl;
+}
+void init(int k)
+{
+    sol[k]=0;
+}
+int succesor(int k)
+{
+    if(sol[k]<n) {
+        sol[k]++;
+        return 1;
+    }
+    return 0;
+}
+int valid(int k)
+{
+    for(int i=1;i<k;i++)
+        if(sol[k]==sol[i])
+        return 0;
+    return 1;
+}
+void bkt(int k)
+{
+    if(k==n+1)
+        afisare();
+    else
+    {
+        init(k); //initializez
+        while(succesor(k)) // aleg o valoare pentru comp curenta
+            if(valid(k)) //daca val e potrivita
+            bkt(k+1); //trec la pasu urmator
+        //pasul inapoi se face impl
+    }
+}
+
+
+int main()
+{
+    cout << "Hello world!" << endl;
+    cin>>n;
+    bkt(1);
+    return 0;
+
+}
+//implementarea fct de sus pt prob permutari
+//introduc n adica de la  cate valori is
