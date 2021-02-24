@@ -1,0 +1,4 @@
+Expresii conditionale
+Expresii conditionale sunt echivalentul selectiilor/deciziilor din alte limbaje de programare
+1.CASE  espx when exp_1   then exp_2
+             [when exp_n then exp_2]
