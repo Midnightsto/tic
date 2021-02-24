@@ -19,3 +19,11 @@ JOIN natural echivalentul la oracle e equijoin
 -tipurile de date tre sa fie la fel
 select first_name,last_name,department_name
 from employees NATURAL JOIN departments
+select first_name,last_name,department_name
+from employees  JOIN departments USING(department_id)
+WHERE LOWER(last_name)= 'king';
+CROSS JOIN returneaza produsul cartezian al inregistrarilor dn tabelele unite
+cartesian product(oracle)
+select first_name,last_name,department_name
+from employees   CROSS JOIN departments 
+WHERE first_name= 'Diana' OR first_name = 'Daniel';
