@@ -2,3 +2,20 @@ Expresii conditionale
 Expresii conditionale sunt echivalentul selectiilor/deciziilor din alte limbaje de programare
 1.CASE  espx when exp_1   then exp_2
              [when exp_n then exp_2]
+             select department_id,last_name,salary,
+
+    CASE department_id
+    WHEN 60 THEN 1.35*salary
+    WHEN 90 THEN 1.50*salary
+    ELSE salary
+    END AS "New salary"
+from employees
+select department_id,last_name,salary,
+
+   DECODE(department_id,10,1.35*salary,90,1.50*salary)
+from employees
+JOIN natural echivalentul la oracle e equijoin
+-uneste datele din 2 tabele pe baza tuturor coloanelor comune
+-tipurile de date tre sa fie la fel
+select first_name,last_name,department_name
+from employees NATURAL JOIN departments
